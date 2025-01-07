@@ -1,0 +1,12 @@
+.edition-mode {
+	display: none;
+	justify-content: center;
+	align-items: baseline;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+.edition-mode i{
+	margin-right: 10px ;
+}

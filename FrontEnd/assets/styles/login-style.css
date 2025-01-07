@@ -1,0 +1,20 @@
+#login a {
+	margin : 1em auto ;
+	color: black;
+}
+
+#login #togglePassword {
+	display: flex;
+	align-items: center;
+}
+
+.error-message{
+	color: red;
+}
+
+.success-message {
+	color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}

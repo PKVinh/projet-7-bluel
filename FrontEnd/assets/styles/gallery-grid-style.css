@@ -1,0 +1,18 @@
+.gallery-grid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	margin-top: 40px;
+}
+
+.gallery-grid img {
+	width: 100%;
+}
+
+.gallery-grid figcaption {
+	font-size: 13px;
+	line-height: 15.25px;
+	color: #3D3D3D;
+}

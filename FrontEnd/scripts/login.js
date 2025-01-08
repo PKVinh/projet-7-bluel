@@ -13,7 +13,7 @@ function buttonLogin () {
     const loginForm = document.getElementById("login-form")
     
     loginForm.addEventListener("submit", async function(event) {
-        event.preventDefault();
+        event.preventDefault(); // Empêche la soumission du formulaire
     
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
@@ -56,7 +56,7 @@ function buttonLogin () {
             }, 2000);
     
         } catch (error) {
-            // Si une erreur se produit, on l'affiche
+            // Si une erreur se produit, on l"affiche
             messageElement.textContent = error.message;
             messageElement.className = "error-message"; // Applique la classe d"erreur
         }

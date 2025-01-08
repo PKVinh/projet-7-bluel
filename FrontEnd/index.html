@@ -14,6 +14,7 @@
 	<!-- CSS SHEETS -->
 	<link rel="stylesheet" href="./assets/styles/main-style.css">
 	<link rel="stylesheet" href="./assets/styles/edtion-mode.css">
+	<link rel="stylesheet" href="./assets/styles/login-style.css">
 	<link rel="stylesheet" href="./assets/styles/introduction-style.css">
 	<link rel="stylesheet" href="./assets/styles/portfolio-style.css">
 	<link rel="stylesheet" href="./assets/styles/bouton-filtrage-style.css">
@@ -21,10 +22,17 @@
 	<link rel="stylesheet" href="./assets/styles/form-style.css">
 	<link rel="stylesheet" href="./assets/styles/footer-style.css">
 
+	<!-- CSS SHEETS POUR FENETRE MODALE -->
+	<link rel="stylesheet" href="./assets/styles/modal/modal-window-style.css">
+	<link rel="stylesheet" href="./assets/styles/modal/modal-upload-form-style.css">
+
 	<!-- SCRIPTS JS -->
 	<script type="module" src="scripts/generateGalleryGrid.js" defer></script>
 	<script type="module" src="scripts/generateEditionMode.js" defer></script>
+	<script type="module" src="scripts/logout.js" defer></script>
 
+	<!-- SCRIPTS JS POUR FENETRE MODALE-->
+	<script type="module" src="scripts/modal/generateModal.js" defer></script>
 </head>
 
 <div class="edition-mode">
@@ -60,25 +68,35 @@
 	</section>
 
 	<section id="portfolio">
-		<div class="portfolio-title">
-			<h2>Mes Projets</h2>
+			<div class="portfolio-title">
+				<h2>Mes Projets</h2>
+
+				<!-- Bouton pour afficher la fenêtre modale -->
+				<button id="modal-open-button" aria-haspopup="dialog" aria-controls="modal">
+					<i class="fa-regular fa-pen-to-square"></i>
+					<p>modifier</p>
+				</button>
+			</div>
+
+			<!-- Fenêtre modale -->
+			<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" hidden>
+			</div>
 
 			<div id="category-options">
 				<input type="radio" id="all" name="category" value="all" checked>
 				<label for="all"><span>Tous</span></label>
-				
+			
 				<input type="radio" id="objects" name="category" value="1">
 				<label for="objects"><span>Objets</span></label>
-				
+			
 				<input type="radio" id="apartments" name="category" value="2">
 				<label for="apartments"><span>Appartements</span></label>
-				
+			
 				<input type="radio" id="hotels" name="category" value="3">
 				<label for="hotels"><span>Hotels & Restaurants</span></label>
 			</div>
 
-			<div class="gallery-grid"></div>
-		</div>
+		<div class="gallery-grid"></div>
 	</section>
 
 	<section class="form" id="contact">

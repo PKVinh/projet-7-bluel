@@ -1,0 +1,50 @@
+/* Formulaire d"ajout de photos dans la modale */
+
+/* Conteneur principal */
+.modal-gallery .form{
+    width: 80%;
+}
+
+.upload-container {
+    background-color: #e8f1f7; /* Couleur de fond */
+    height: 200px; 
+    display: flex;
+    justify-content: center;
+}
+
+.upload-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+	height: 150px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.upload-div i {
+    color: #b9c5cc; /* Couleur de l"icône */
+    margin-bottom: 10px;
+}
+
+#button-add-image{
+    background-color: #d1dfe7;
+    color: #4b738e;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 8px;
+}
+
+.file-info {
+    font-size: 12px;
+    color: #444444;
+}
+
+#image-preview{
+    width: inherit;
+    height: 100%;            /* Prend toute la hauteur du conteneur */
+    object-fit: cover;       /* Conserve les proportions et remplit le conteneur */
+}

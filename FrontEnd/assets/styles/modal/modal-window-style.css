@@ -1,0 +1,102 @@
+/* Bouton pour afficher la fenêtre modale */
+#modal-open-button {
+    display: none;
+	border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Fenêtre modale */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Arrière-plan assombri */
+    z-index: 1000;
+}
+
+/* Contenu de la fenêtre modale */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 630px;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+/* Titre de la modale */
+#modal-title {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 15px 27px 10px;
+}
+
+/* Contenu de la modale */
+.modal-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+	margin: 0 auto;
+	padding-bottom: 35px;
+    border-bottom: 1px solid gray;
+}
+
+.modal-gallery img{
+	width: 110px;
+	height: 110px;
+}
+
+.modal-work {
+	position: relative;
+     /* display: inline-block; Pour que le conteneur s"adapte à l"image */
+    flex: 1 1 calc(100% / 5); /* Taille flexible avec une largeur de 20% */
+    max-width: calc(100% / 5); /* Assure que les colonnes ne dépassent pas leur largeur */
+    box-sizing: border-box; /* Inclure les bordures et marges dans les calculs de largeur */
+}
+
+.modal-work i {
+	position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    border-radius: 3px;
+}
+
+/* Bouton de fermeture de la fenêtre modale */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #ff4d4d;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Cacher la modale par défaut */
+.modal[hidden] {
+    display: none;
+}
+
+.return {
+    display: none;
+	position: absolute;
+	top: 10px;
+    left: 10px;
+	font-size: 24px;
+	border: none;
+    margin-bottom: 10px; /* Ajustez selon le style souhaité */
+    background: white;
+}

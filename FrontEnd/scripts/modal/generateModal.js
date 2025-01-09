@@ -26,14 +26,12 @@ const modal = document.getElementById("modal");
 openModalBtn.addEventListener("click", () => {
     modal.removeAttribute("hidden");
     modal.setAttribute("aria-hidden", "false");
-    closeModalBtn.focus();
 });
 
 // Fermer la fenêtre modale
 function closeModal() {
     modal.setAttribute("hidden", true);
     modal.setAttribute("aria-hidden", "true");
-    lastFocusedElement.focus(); // Rendre le focus à l"élément précédemment actif
 }
 
 // Fermer la fenêtre modale en cliquant sur le bouton de fermeture
@@ -50,12 +48,6 @@ window.addEventListener("click", (event) => {
 // Fonction pour afficher les travaux
 export async function displayModalWorks() {
     const galleryModal = document.querySelector(".modal-gallery");
-
-    if (!galleryModal) {
-        console.error("L'élément avec la classe galleryModal n'a pas été trouvé dans le DOM.");
-        return;
-    }
-    
     galleryModal.innerHTML = ""; // Vide la galerie avant d"ajouter les nouveaux éléments
 
     const response = await fetch("http://localhost:5678/api/works");

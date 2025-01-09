@@ -19,11 +19,18 @@ function buttonLogin () {
         const password = document.getElementById("password").value;
         const messageElement = document.getElementById("message");
     
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+
         try {
             // Validation des champs avant l"envoi
             if (!email || !password) {
                 throw new Error("Nom d\"utilisateur et mot de passe sont requis.");
             }
+
+            // Validation du format de l'email
+            if (!emailRegex.test(email)) {
+                throw new Error("Veuillez entrer une adresse email valide.");
+            }            
     
             // Envoi des informations de login à l"API via fetch avec await
             const response = await fetch("http://localhost:5678/api/users/login", {
@@ -56,7 +63,7 @@ function buttonLogin () {
             }, 2000);
     
         } catch (error) {
-            // Si une erreur se produit, on l"affiche
+            // Si une erreur se produit, on l'affiche
             messageElement.textContent = error.message;
             messageElement.className = "error-message"; // Applique la classe d"erreur
         }

@@ -21,3 +21,7 @@ logOut.addEventListener("click", (event) => {
         }
     }
 )
+
+// window.addEventListener("unload", () => {
+//     localStorage.removeItem("authToken");
+// });

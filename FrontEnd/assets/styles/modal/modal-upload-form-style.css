@@ -6,7 +6,7 @@
 }
 
 .upload-container {
-    background-color: #e8f1f7; /* Couleur de fond */
+    background-color: #e8f1f7; 
     height: 200px; 
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-	height: 150px; /* Ajustez la hauteur selon vos besoins */
+	height: 150px; 
 }
 
 .upload-div i {

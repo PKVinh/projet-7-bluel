@@ -1,19 +1,8 @@
-// Fonction pour rafraîchir la disposition des images (si nécessaire)
-function updateImageLayout() {
-    const gallery = document.querySelector(".modal-gallery"); // Remplacez par le sélecteur de votre galerie
-    if (gallery) {
-        // Forcer le navigateur à re-calculer le layout
-        gallery.style.display = "none";
-        gallery.offsetHeight; // Force le reflow
-        gallery.style.display = ""; // Remettre le style initial
-    }
-}
 
 async function deleteImageFromAPI(id) {
-
     const confirmation = confirm("Voulez-vous vraiment supprimer cette image ?");
     if (!confirmation) {
-        return; // Si l"utilisateur annule, ne rien faire
+        return; // Si l'utilisateur annule, ne rien faire
     }
 
     const token = localStorage.getItem("authToken");
@@ -34,13 +23,11 @@ async function deleteImageFromAPI(id) {
         if (response.ok) {
             console.log("Image supprimée avec succès de l\"API");
             // Récupérer l"élément image et le supprimer du DOM
-            const imageElement = document.getElementById(id);
+            const imageElement = document.getElementById(id).parentNode;
             if (imageElement) {
                 imageElement.remove();
             }
 
-            // Repositionner les images restantes si nécessaire
-            updateImageLayout();
         } else {
             console.error(`Token Invalide: ${response.status}`);
         }

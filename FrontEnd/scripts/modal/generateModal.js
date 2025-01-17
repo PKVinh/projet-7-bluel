@@ -5,7 +5,7 @@ function createModal() {
                 <h2 id="modal-title">Galerie photo</h2>
                 <div class="modal-gallery"></div>
                 <button class="button" id="btnAddWorks">Ajouter une photo</button>
-                <button class="button" id="btnValidate">Valider</button>
+                <button class="button" id="btnValidate" style="display: none">Valider</button>
                 <button id="modal-close-button" class="close" aria-label="Fermer la fenêtre">&times;</button>
                 <button id="back-arrow" class="return" aria-label="retour"><i class="fas fa-arrow-left"></i></button>
             </div>

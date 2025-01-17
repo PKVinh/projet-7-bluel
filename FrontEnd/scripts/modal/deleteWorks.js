@@ -1,3 +1,4 @@
+import { displayWorks } from "../generateGalleryGrid.js";
 
 async function deleteImageFromAPI(id) {
     const confirmation = confirm("Voulez-vous vraiment supprimer cette image ?");
@@ -27,6 +28,16 @@ async function deleteImageFromAPI(id) {
             if (imageElement) {
                 imageElement.remove();
             }
+            const updatedGalleryResponse = await fetch("http://localhost:5678/api/works", {
+                headers: { "Authorization": `Bearer ${token}` }
+            });
+
+            if (updatedGalleryResponse.ok) {
+                const updatedImages = await updatedGalleryResponse.json();
+                displayWorks(updatedImages);
+            } else {
+                console.error("Erreur lors de la récupération de la galerie mise à jour.");
+            }
 
         } else {
             console.error(`Token Invalide: ${response.status}`);
@@ -49,6 +60,7 @@ document.body.addEventListener("click", (event) => {
             if (image) {
                 deleteImageFromAPI(image.id)
                 trash.remove()
+                displayWorks(updatedImages);
             }
         }
     }

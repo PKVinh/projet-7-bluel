@@ -1,16 +1,17 @@
 import { displayWorks } from "../generateGalleryGrid.js";
 
 async function submitWorks() {
+    // Récupération du token
     const token = localStorage.getItem("authToken");
     if (!token) {
         alert("Impossible de récupérer le token, requête annulée.");
         return;
     }
 
+    // Création de FormData et du message de succès/erreur
     const form = document.getElementById("upload-form");
     const formData = new FormData(form);
     const messageElement = document.getElementById("message-modal");
-
 
     try {
         // Validation des champs
@@ -18,8 +19,9 @@ async function submitWorks() {
         const textInput = form.querySelector('input[name="title"]');
         const file = fileInput.files[0];
 
+        //Contrôle des champs
         if (!textInput.value.trim()) {
-            throw new Error("Le champ texte est vide.");
+            throw new Error("Le champ Titre est vide.");
         }
 
         if (textInput.value.length > 255) {
@@ -52,21 +54,23 @@ async function submitWorks() {
         if (response.ok) {
             messageElement.textContent = "Ajout réussi !";
             messageElement.className = "success-message"; // Applique la classe de succès
-
             form.reset(); // Vide tous les champs du formulaire
+
+            // Remise à zéro de la preview
             const uploadDiv = document.querySelector(".upload-div");
             uploadDiv.style.display = "flex"
 
             const imgPreview = document.getElementById("image-preview")
             imgPreview.style.display = "none"
             
+            // Update de la galerie
             const updatedGalleryResponse = await fetch("http://localhost:5678/api/works", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
 
             if (updatedGalleryResponse.ok) {
                 const updatedImages = await updatedGalleryResponse.json();
-                displayWorks(updatedImages);
+                displayWorks(updatedImages); // Rappelle la fonction pour afficher les images dans les galeries
             } else {
                 console.error("Erreur lors de la récupération de la galerie mise à jour.");
             }
@@ -80,10 +84,12 @@ async function submitWorks() {
     }
 }
 
+// Event de validation
 const btnValidate = document.getElementById("btnValidate");
 
 btnValidate.addEventListener("click", (event) => {
     event.preventDefault();
-
     submitWorks();
+    btnValidate.classList.remove("button"); // Change la couleur du bouton
+    btnValidate.classList.add("button-gray")
 });

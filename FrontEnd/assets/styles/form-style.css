@@ -17,7 +17,7 @@
 	flex-direction: column;
 }
 
-.form input, #modal-upload-form select, #btnAddWorks, #btnValidate {
+.form input, #modal-upload-form select, #btnAddWorks, #btnValidate  {
 	height: 50px;
 	font-size: 1.1em;
 	border: none;
@@ -38,6 +38,17 @@
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 225px;
+	text-align: center;
+	border-radius: 60px ;
+}
+
+.button-gray {
+	font-family: "Syne";
+	font-weight: 700;
+	color: white;
+	background-color: gray;
 	margin : 2em auto ;
 	width: 225px;
 	text-align: center;

@@ -50,8 +50,13 @@ export async function displayModalWorks() {
     const galleryModal = document.querySelector(".modal-gallery");
     galleryModal.innerHTML = ""; // Vide la galerie avant d"ajouter les nouveaux éléments
 
-    const response = await fetch("http://localhost:5678/api/works");
-    const works = await response.json();
+    try {
+        const response = await fetch("http://localhost:5678/api/works");
+        
+        if (!response.ok) 
+            throw new Error ("Erreur lors de la récupération des travaux")
+        
+        const works = await response.json();
 
     // Boucle `for` pour parcourir les éléments filtrés
     for (let i = 0; i < works.length; i++) {
@@ -63,6 +68,7 @@ export async function displayModalWorks() {
 
         const imageElement = document.createElement("img");
         imageElement.src = work.imageUrl; // Assurez-vous que l"API renvoie cette clé
+        imageElement.alt = work.title
         imageElement.id = works[i].id
         
         const trashElement = document.createElement("i");
@@ -74,6 +80,9 @@ export async function displayModalWorks() {
 
         const btnValidate = document.getElementById("btnValidate")
         btnValidate.style.display = "none";
+    }
+    } catch (error) {
+        alert("Erreur lors de la récupération des travaux")
     }
 }
 

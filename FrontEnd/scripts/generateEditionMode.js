@@ -6,7 +6,13 @@ function generateEditionMode() {
     if (authToken) {
         // Si le token est présent et valide, affiche le mode édition et cache les boutons
         document.getElementById("category-options").style.display = "none";
-        document.querySelector(".edition-mode").style.display = "flex";
+        const editionMode = document.querySelector(".edition-mode")
+        editionMode.style.display = "flex";
+        editionMode.classList.add("edition-mode-margin")
+
+        const header = document.querySelector("header")
+        header.classList.add("header-down")
+        
         document.getElementById("modal-open-button").style.display = "flex";
         
         const loginLink = document.getElementById("log-link");

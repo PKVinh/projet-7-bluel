@@ -1,6 +1,11 @@
 // Fonction pour récupérer les éléments de l"API et les afficher
 export async function getWorks() {
+    try {
     const response = await fetch("http://localhost:5678/api/works");
+    
+    if (!response.ok) 
+        throw new Error ("Erreur lors de la récupération des travaux")
+    
     const works = await response.json();
 
     // Récupère la sélection actuelle de l"utilisateur
@@ -18,6 +23,11 @@ export async function getWorks() {
 
     // Affiche les éléments filtrés dans la galerie
     displayWorks(filteredWorks);
+    }
+    
+    catch(error) {
+        alert("Erreur lors de la récupération des travaux")
+    }
 }
 
 // Fonction pour afficher les travaux filtrés
@@ -33,7 +43,8 @@ export function displayWorks(filteredWorks) {
         const figureElement = document.createElement("figure");
 
         const imageElement = document.createElement("img");
-        imageElement.src = work.imageUrl; // Assurez-vous que l"API renvoie cette clé
+        imageElement.src = work.imageUrl; 
+        imageElement.alt = work.title;
 
         const captionElement = document.createElement("figcaption");
         captionElement.innerText = work.title; // Assurez-vous que l"API renvoie cette clé

@@ -13,6 +13,7 @@ btnAddWorks.addEventListener ("click", (event) => {
     const modalContent = document.querySelector(".modal-gallery");
     modalContent.innerHTML = "";
     modalContent.style.display = "block"; 
+    modalContent.classList.add("modal-form")
 
     // Affiche le bouton Retour
     const btnReturn = document.querySelector(".return");
@@ -151,6 +152,7 @@ backArrow.addEventListener("click", () => {
     //Suppresion du contenu de la modale
     const modalContent = document.querySelector(".modal-gallery");
     modalContent.removeAttribute("style", "block"); 
+    modalContent.classList.remove("modal-form")
     
     //Changement du titre
     const modalTitle = document.getElementById("modal-title")

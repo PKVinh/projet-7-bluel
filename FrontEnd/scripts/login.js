@@ -19,7 +19,7 @@ function buttonLogin () {
         const password = document.getElementById("password").value;
         const messageElement = document.getElementById("message");
     
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i; // Vérifie le format du mail : texte@extension.fr
 
         try {
             // Validation des champs avant l"envoi

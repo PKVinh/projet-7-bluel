@@ -1,23 +1,20 @@
 #introduction {
 	display: flex;
 	align-items: center;
+	margin: 100px 0;
 }
+
 #introduction figure {
 	flex: 1
 }
 #introduction img {
 	display: block;
-	margin: auto;
-	width: 80%;
+	width: 85%;
 }
 
 #introduction article {
 	flex: 1
 }
-#introduction h2 {
+#introduction h2, #introduction p {
 	margin-bottom: 1em;
-}
-
-#introduction p {
-	margin-bottom: 0.5em;
 }

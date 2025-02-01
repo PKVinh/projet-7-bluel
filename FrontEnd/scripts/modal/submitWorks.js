@@ -64,9 +64,7 @@ async function submitWorks() {
             imgPreview.style.display = "none"
             
             // Update de la galerie
-            const updatedGalleryResponse = await fetch("http://localhost:5678/api/works", {
-                headers: { "Authorization": `Bearer ${token}` }
-            });
+            const updatedGalleryResponse = await fetch("http://localhost:5678/api/works")
 
             if (updatedGalleryResponse.ok) {
                 const updatedImages = await updatedGalleryResponse.json();

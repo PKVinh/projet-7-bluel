@@ -7,6 +7,17 @@
     color: white;
 }
 
+.edition-mode-margin {
+	width: 100vw; 
+    position: absolute; 
+    left: 0;
+	top: 0;
+}
+
 .edition-mode i{
 	margin-right: 10px ;
+}
+
+.header-down {
+	margin: 100px 0 !important
 }

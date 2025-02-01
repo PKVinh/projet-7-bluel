@@ -58,7 +58,19 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+}
+
+header nav {
+	display: flex;
+}
+
+nav img {
+	width: 22px;
+}
+
+nav i {
+	font-size: 20px;
 }
 
 section {
@@ -94,7 +106,7 @@ nav ul {
 
 }
 nav li {
-	padding: 0 10px;
+	padding-left: 65px;
 	font-size: 1.2em;
 }
 
@@ -107,4 +119,9 @@ nav a {
 
 li:hover {
 	color: #B1663C;
+}
+
+main {
+	width: 900px;
+    margin: auto;
 }

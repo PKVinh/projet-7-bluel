@@ -1,6 +1,6 @@
 const API_URL = window.location.hostname.includes("localhost")
   ? "http://localhost:5678"
-  : "${API_URL}";
+  : "https://projet-7-bluel.onrender.com";
 
 // Fonction pour récupérer les éléments de l"API et les afficher
 export async function getWorks() {

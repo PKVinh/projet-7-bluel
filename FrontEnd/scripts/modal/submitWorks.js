@@ -2,7 +2,7 @@ import { displayWorks } from "../generateGalleryGrid.js";
 
 const API_URL = window.location.hostname.includes("localhost")
   ? "http://localhost:5678"
-  : "http://sophie-bluel.phan-vk.fr";
+  : "https://projet-7-bluel.onrender.com";
 
 async function submitWorks() {
     // Récupération du token

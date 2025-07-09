@@ -68,7 +68,7 @@ async function submitWorks() {
             imgPreview.style.display = "none"
             
             // Update de la galerie
-            const updatedGalleryResponse = await fetch("${API_URL}/api/works")
+            const updatedGalleryResponse = await fetch(`${API_URL}/api/works`)
 
             if (updatedGalleryResponse.ok) {
                 const updatedImages = await updatedGalleryResponse.json();

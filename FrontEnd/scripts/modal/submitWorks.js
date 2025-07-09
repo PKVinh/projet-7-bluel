@@ -42,7 +42,7 @@ async function submitWorks() {
         }
 
         // Envoi des données
-        const response = await fetch("http://localhost:5678/api/works", {
+        const response = await fetch("https://projet-7-bluel.onrender.com/api/works", {
             method: "POST",
             headers: {
                 "accept": "application/json",
@@ -64,7 +64,7 @@ async function submitWorks() {
             imgPreview.style.display = "none"
             
             // Update de la galerie
-            const updatedGalleryResponse = await fetch("http://localhost:5678/api/works")
+            const updatedGalleryResponse = await fetch("https://projet-7-bluel.onrender.com/api/works")
 
             if (updatedGalleryResponse.ok) {
                 const updatedImages = await updatedGalleryResponse.json();

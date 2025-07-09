@@ -51,7 +51,7 @@ export async function displayModalWorks() {
     galleryModal.innerHTML = ""; // Vide la galerie avant d"ajouter les nouveaux éléments
 
     try {
-        const response = await fetch("http://localhost:5678/api/works");
+        const response = await fetch("https://projet-7-bluel.onrender.com/api/works");
         
         if (!response.ok) 
             throw new Error ("Erreur lors de la récupération des travaux")

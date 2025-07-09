@@ -13,7 +13,7 @@ async function deleteImageFromAPI(id) {
     }
 
     try {
-        const response = await fetch(`http://localhost:5678/api/works/${id}`, {
+        const response = await fetch(`https://projet-7-bluel.onrender.com/api/works/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -28,7 +28,7 @@ async function deleteImageFromAPI(id) {
             if (imageElement) {
                 imageElement.remove();
             }
-            const updatedGalleryResponse = await fetch("http://localhost:5678/api/works", {
+            const updatedGalleryResponse = await fetch("https://projet-7-bluel.onrender.com/api/works", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
 

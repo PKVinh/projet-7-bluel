@@ -33,7 +33,7 @@ function buttonLogin () {
             }            
     
             // Envoi des informations de login à l"API via fetch avec await
-            const response = await fetch("http://localhost:5678/api/users/login", {
+            const response = await fetch("https://projet-7-bluel.onrender.com/api/users/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

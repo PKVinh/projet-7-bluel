@@ -1,5 +1,9 @@
 import { displayWorks } from "../generateGalleryGrid.js";
 
+const API_URL = window.location.hostname.includes("localhost")
+  ? "http://localhost:5678"
+  : "http://sophie-bluel.phan-vk.fr";
+
 async function submitWorks() {
     // Récupération du token
     const token = localStorage.getItem("authToken");
@@ -42,7 +46,7 @@ async function submitWorks() {
         }
 
         // Envoi des données
-        const response = await fetch("https://projet-7-bluel.onrender.com/api/works", {
+        const response = await fetch(`${API_URL}/api/works`, {
             method: "POST",
             headers: {
                 "accept": "application/json",
@@ -64,7 +68,7 @@ async function submitWorks() {
             imgPreview.style.display = "none"
             
             // Update de la galerie
-            const updatedGalleryResponse = await fetch("https://projet-7-bluel.onrender.com/api/works")
+            const updatedGalleryResponse = await fetch("${API_URL}/api/works")
 
             if (updatedGalleryResponse.ok) {
                 const updatedImages = await updatedGalleryResponse.json();

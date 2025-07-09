@@ -1,5 +1,9 @@
 import { displayWorks } from "../generateGalleryGrid.js";
 
+const API_URL = window.location.hostname.includes("localhost")
+  ? "http://localhost:5678"
+  : "${API_URL}";
+
 async function deleteImageFromAPI(id) {
     const confirmation = confirm("Voulez-vous vraiment supprimer cette image ?");
     if (!confirmation) {
@@ -13,7 +17,7 @@ async function deleteImageFromAPI(id) {
     }
 
     try {
-        const response = await fetch(`https://projet-7-bluel.onrender.com/api/works/${id}`, {
+        const response = await fetch(`${API_URL}/api/works/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -28,7 +32,7 @@ async function deleteImageFromAPI(id) {
             if (imageElement) {
                 imageElement.remove();
             }
-            const updatedGalleryResponse = await fetch("https://projet-7-bluel.onrender.com/api/works", {
+            const updatedGalleryResponse = await fetch(`${API_URL}/api/works`, {
                 headers: { "Authorization": `Bearer ${token}` }
             });
 

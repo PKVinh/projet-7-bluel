@@ -1,3 +1,7 @@
+const API_URL = window.location.hostname.includes("localhost")
+  ? "http://localhost:5678"
+  : "${API_URL}";
+
 function togglePassword() {
     document.getElementById("show-password").addEventListener("change", function() {
         const passwordField = document.getElementById("password");
@@ -33,7 +37,7 @@ function buttonLogin () {
             }            
     
             // Envoi des informations de login à l"API via fetch avec await
-            const response = await fetch("https://projet-7-bluel.onrender.com/api/users/login", {
+            const response = await fetch(`${API_URL}/api/users/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

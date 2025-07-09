@@ -1,3 +1,7 @@
+const API_URL = window.location.hostname.includes("localhost")
+  ? "http://localhost:5678"
+  : "${API_URL}";
+
 // Fonction pour créer et insérer la fenêtre modale dans le DOM
 function createModal() {
     const modalHTML = `
@@ -51,7 +55,7 @@ export async function displayModalWorks() {
     galleryModal.innerHTML = ""; // Vide la galerie avant d"ajouter les nouveaux éléments
 
     try {
-        const response = await fetch("https://projet-7-bluel.onrender.com/api/works");
+        const response = await fetch(`${API_URL}/api/works`);
         
         if (!response.ok) 
             throw new Error ("Erreur lors de la récupération des travaux")

@@ -1,7 +1,11 @@
+const API_URL = window.location.hostname.includes("localhost")
+  ? "http://localhost:5678"
+  : "${API_URL}";
+
 // Fonction pour récupérer les éléments de l"API et les afficher
 export async function getWorks() {
     try {
-    const response = await fetch("https://projet-7-bluel.onrender.com/api/works");
+    const response = await fetch(`${API_URL}/api/works`);
     
     if (!response.ok) 
         throw new Error ("Erreur lors de la récupération des travaux")

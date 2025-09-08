@@ -12,9 +12,9 @@ const normalizePort = val => {
 	}
 	return false;
 };
-const PORT = process.env.PORT || 5678;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+const port = process.env.port || 5678;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
 
 const errorHandler = error => {

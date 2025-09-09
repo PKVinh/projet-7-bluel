@@ -12,10 +12,13 @@ const normalizePort = val => {
 	}
 	return false;
 };
+
 const port = normalizePort(process.env.port || 5678);
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+const server = http.createServer(app);
 
 const errorHandler = error => {
 	if (error.syscall !== 'listen') {
@@ -36,8 +39,6 @@ const errorHandler = error => {
 			throw error;
 	}
 };
-
-const server = http.createServer(app);
 
 server.on('error', errorHandler);
 server.on('listening', () => {

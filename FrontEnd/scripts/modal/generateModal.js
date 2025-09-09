@@ -1,6 +1,6 @@
 const API_URL = window.location.hostname.includes("localhost")
   ? "http://localhost:5678"
-  : "https://projet-7-bluel.onrender.com";
+  : `${window.location.origin}/api`;
 
 // Fonction pour créer et insérer la fenêtre modale dans le DOM
 function createModal() {

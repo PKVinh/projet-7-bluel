@@ -2,7 +2,9 @@ import { displayWorks } from "../generateGalleryGrid.js";
 
 const API_URL = window.location.hostname.includes("localhost")
   ? "http://localhost:5678"
-  : `${window.location.origin}/api`;
+  : "https://projet-7-bluel.onrender.com"
+
+;
 
 async function deleteImageFromAPI(id) {
     const confirmation = confirm("Voulez-vous vraiment supprimer cette image ?");
